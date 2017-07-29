@@ -38,5 +38,35 @@
             </p>
         </div>
     </div>
-
+    <div class="row">
+        <h1 class="page-header">.net 4.5新特性</h1>
+        <h2>普通绑定</h2>
+        <dl class="dl-horizontal">
+            <asp:Repeater ID="RptPerson" runat="server">
+                <ItemTemplate>
+                    <dt>名称</dt>
+                    <dd><%# Eval("Name") %></dd>
+                </ItemTemplate>
+            </asp:Repeater>
+        </dl>
+        <h2>1.强类型数据控件 ItemType="WebApplication6.Models.Person"</h2>
+        <dl class="dl-horizontal">
+            <asp:Repeater ID="RptPerson1" runat="server" ItemType="WebApplication6.Models.Person">
+                <ItemTemplate>
+                    <dt>名称</dt>
+                    <dd><%# Item.Name%></dd>
+                </ItemTemplate>
+            </asp:Repeater>
+        </dl>
+        <h2>2.SelectMethod</h2>
+        <dl class="dl-horizontal">
+            <asp:Repeater ID="RptPerson2" runat="server" SelectMethod="GetPerson">
+                <ItemTemplate>
+                    <dt>名称</dt>
+                    <dd><%# Eval("Name") %></dd>
+                </ItemTemplate>
+            </asp:Repeater>
+        </dl>
+        <h2>3 Data Annotations Validation 是针对数据控件的回传验证的，就不试了</h2>
+    </div>
 </asp:Content>
